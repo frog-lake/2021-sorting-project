@@ -1,7 +1,7 @@
-random: rand-ints.c
+default: all
+
+all: Hello
+
+Hello: rand-ints.c
 	gcc -g -o ../bin/rand rand-ints.c
 
-clean-rand:
-	rm ../bin/rand
-
-.PHONY: random clean-rand
