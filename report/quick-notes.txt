@@ -1,0 +1,11 @@
+notes adapted directly from my notebook
+
+21/12/2020
+--> attempted to implement bubblesort, took too long to sort 1 million ints
+--> test further after other algos implemented
+--> random number gen stops working past 2 million ints (segmentation fault), possibly due to insufficient memory on machine
+--> before implementing the next algorithm, sort out makefile and add a way to get varied datasets in rand-ints.c
+
+quicksort implementation
+--> mistyped an index and put in the wrong value type when using quicksort in main.c (array[0] instead of 0)
+
