@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	print_array(array, len);
 
 	printf("-------\n");
-	bubblesort(array, len);
+	quicksort(array, 0, len - 1);
 	
 	print_array(array, len);
 
