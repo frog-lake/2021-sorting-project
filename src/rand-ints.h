@@ -1,3 +1,3 @@
 // gen-rand???
 
-void gen-rand(int *array, int len);
+void gen_rand(int *array, int len);

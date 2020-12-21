@@ -1,5 +1,15 @@
-random: rand-ints.c
-	gcc -g -o ../bin/rand rand-ints.c
+OBJS=main.c rand-ints.c sorting-algorithms.c
 
-rm-rand:
+sorter.exe: $(OBJS)
+	gcc $(OBJS)
+
+
+random: $(OBJS)
+	gcc -g -o ../bin/funy $(OBJS)
+
+main: main.c
+	gcc -g -o ../bin/main main.c
+
+rm-file:
 	rm ../bin/rand
+	rm ../bin/main
