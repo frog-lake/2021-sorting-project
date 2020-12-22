@@ -9,3 +9,7 @@ notes adapted directly from my notebook
 quicksort implementation
 --> mistyped an index and put in the wrong value type when using quicksort in main.c (array[0] instead of 0)
 
+22/12/20
+--> timer was not working initially, fixed it to run based on CPU time rather than wall-clock time
+--> added make test + tester shellscript for easier testing
+

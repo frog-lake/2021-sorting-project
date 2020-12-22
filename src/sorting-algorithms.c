@@ -3,8 +3,27 @@
 
 void swap(int *xp, int *yp);
 void bubblesort(int *array, int len);
+
 void quicksort(int *array, int low, int high);
 int partition(int *array, int low, int high);
+
+void mergesort(int *array, int *brray, len);
+void merge(int *array, int *brray, len);
+void copyarray(int *brray, int *array, len);
+
+void mergesort(int *array, int *copy, len)
+{
+
+}
+
+void copyarray(int *brray, int *array, len)
+{
+	for(int i = 0; i < n; ++i)
+		array[i] = brray[i];
+}
+
+
+
 
 void swap(int *xp, int *yp)
 {
