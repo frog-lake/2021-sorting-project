@@ -5,6 +5,8 @@
 #include "rand-ints.h"
 
 void gen_rand(int *array, int len);
+void partial_sort(int *array, int len);
+int compare_ints(const void *a, const void *b);
 
 void gen_rand(int *array, int len)
 {
@@ -15,4 +17,16 @@ void gen_rand(int *array, int len)
 
 }
 
+void partial_sort(int *array, int len)
+{
+	int part = len/2;
+	qsort(array, part, sizeof(int), compare_ints);
+}
 
+int compare_ints(const void *a, const void *b)
+{
+	const int *da = (const int *) a;
+	const int *db = (const int *) b;
+
+	return (*da > *db) - (*da < *db);
+}

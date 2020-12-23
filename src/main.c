@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 #include "rand-ints.h"
 #include "sorting-algorithms.h"
 
@@ -19,17 +20,25 @@ int main(int argc, char *argv[])
 
 	int array[len];
 	gen_rand(array, len);
+	int partial[len];
+	copyarray(array, 0, len, partial);
+
+	printf("random\n");
 	measure_runtime(array, len, type);
-	//print_array(array, len);
+
+	printf("partial\n");
+	measure_runtime(partial, len, type);
+
 
 	//printf("-------\n");
 	return 0;
 }
 
+
 void measure_runtime(int *array, int len, int type)
 {
 	clock_t start = clock();
-	char t[10];
+
 	if(type == 1){
 		bubblesort(array, len);
 	}
