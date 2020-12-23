@@ -37,7 +37,7 @@ void measure_runtime(int *array, int len, int type)
 		quicksort(array, 0, len - 1);
 	}
 	else if(type == 3){
-		radixsort(array, len);
+		mergesort(array, len);
 	}
 	//print_array(array, len);
 	clock_t end = clock();

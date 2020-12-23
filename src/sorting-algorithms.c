@@ -7,21 +7,50 @@ void bubblesort(int *array, int len);
 void quicksort(int *array, int low, int high);
 int partition(int *array, int low, int high);
 
-void mergesort(int *array, int *brray, len);
-void merge(int *array, int *brray, len);
-void copyarray(int *brray, int *array, len);
+void mergesort(int *array, int len);
+void split_merge(int *brray, int start, int end, int *array);
+void merge(int *array, int start, int middle, int end, int *brray);
+void copyarray(int *array, int start, int end, int *brray);
 
-void mergesort(int *array, int *copy, len)
+void mergesort(int *array, int len)
 {
+	int brray[len];
+	copyarray(array, 0, len, brray);
+	split_merge(brray, 0, len, array);
+}
+
+void split_merge(int *brray, int start, int end, int *array)
+{
+	if(end - start <= 1)
+		return;
+	int middle = (end + start) / 2;
+	split_merge(array, start, middle, brray);
+	split_merge(array, middle, end, brray);
+	merge(brray, start, middle, end, array);
+}
+
+void merge(int *array, int start, int middle, int end, int *brray)
+{
+	int i = start, j = middle;
+
+	for(int k = start; k < end; ++k){
+		if(i < middle && (j <= end || array[i] <= array[j])){
+			brray[k] = array[i];
+			++i;
+		} else {
+			brray[k] = array[j];
+			++j;
+		}
+	}
 
 }
 
-void copyarray(int *brray, int *array, len)
-{
-	for(int i = 0; i < n; ++i)
-		array[i] = brray[i];
-}
 
+void copyarray(int *array, int start, int end, int *brray)
+{
+	for(int i = start; i < end; ++i)
+		brray[i] = array[i];
+}
 
 
 
