@@ -22,15 +22,22 @@ int main(int argc, char *argv[])
 	gen_rand(array, len);
 	int partial[len];
 	copyarray(array, 0, len, partial);
+	partial_sort(partial, len);
+	int reverse[len];
+	copyarray(array, 0, len, reverse);
+	reverse_sort(reverse, len);
 
 	printf("random\n");
 	measure_runtime(array, len, type);
+	printf("-------\n");
 
 	printf("partial\n");
 	measure_runtime(partial, len, type);
+	printf("-------\n");
 
-
-	//printf("-------\n");
+	printf("reversed\n");
+	measure_runtime(partial, len, type);
+	printf("-------\n");
 	return 0;
 }
 
@@ -40,12 +47,15 @@ void measure_runtime(int *array, int len, int type)
 	clock_t start = clock();
 
 	if(type == 1){
+		printf("bubblesort\n");
 		bubblesort(array, len);
 	}
 	else if(type == 2){
+		printf("quicksort\n");
 		quicksort(array, 0, len - 1);
 	}
 	else if(type == 3){
+		printf("mergesort\n");
 		mergesort(array, len);
 	}
 	//print_array(array, len);
