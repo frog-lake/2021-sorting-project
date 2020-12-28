@@ -13,3 +13,8 @@ quicksort implementation
 --> timer was not working initially, fixed it to run based on CPU time rather than wall-clock time
 --> added make test + tester shellscript for easier testing
 
+28/12/20
+--> added first attempted optimisation, replacing if statement in measure_runtime() in main.c with a switch statment
+--> formatting of the output could be improved, as output order is based on types of arrays over sorting algorithms
+--> program is no longer able to handle sorting 1000000 ints, might be to do with all the memory used
+--> after further testing, it appears that the current machine may just not have enough memory to handle generating 1000000 ints, which will be further tested on other machines
