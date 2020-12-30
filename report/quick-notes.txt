@@ -18,7 +18,5 @@ quicksort implementation
 --> formatting of the output could be improved, as output order is based on types of arrays over sorting algorithms
 --> program is no longer able to handle sorting 1000000 ints, might be to do with all the memory used
 --> after further testing, it appears that the current machine may just not have enough memory to handle generating 1000000 ints, which will be further tested on other machines
---> removed the extraneous arrays (reverse, partial, etc..) with one array, as having that many arrays when it was not needed was fairly redundant
 
-30/12/2020
---> implemented malloc() for both array and workarray and solved the issue of the program being unable to reach up to 1 and 2 million integers
+

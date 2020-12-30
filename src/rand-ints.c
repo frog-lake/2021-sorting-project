@@ -9,6 +9,7 @@ void partial_sort(int *array, int len);
 int compare_ints(const void *a, const void *b);
 void reverse_sort(int *array, int len);
 int rev_compare_ints(const void *a, const void *b);
+void array_type(int *array, int len, int arr_type);
 
 void gen_rand(int *array, int len)
 {
@@ -46,3 +47,21 @@ int rev_compare_ints(const void *a, const void *b)
 	return (*da < *db) - (*da > *db);
 }
 
+void array_type(int *array, int len, int arr_type)
+{
+	switch(arr_type)
+	{
+	case 1:
+		//partial sort
+		partial_sort(array, len);
+		break;
+	case 2:
+		// reverse sort
+		reverse_sort(array, len);
+		break;
+	case 3:
+		// sorted
+		qsort(array, len, sizeof(int), compare_ints);
+		break;
+	}
+}

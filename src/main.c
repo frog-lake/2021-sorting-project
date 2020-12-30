@@ -8,7 +8,7 @@
 // bubblesort, quicksort, mergesort, copyarray
 
 void print_array(int *array, int len);
-void measure_runtime(int *array, int len, int type);
+void measure_runtime(int *array, int len, int type, int arr_type);
 void gen_array(int len, int type);
 
 int main(int argc, char *argv[])
@@ -23,14 +23,13 @@ int main(int argc, char *argv[])
 		type = atoi(argv[2]);
 		gen_array(len, type);
 	}
-	return 0;
+	else{return 0;}
 }
 
 void gen_array(int len, int type)
 {
-	int *array, *workarray;
+	int *array;
 	array = (int *) malloc(len * sizeof(int));
-	workarray = (int *) malloc(len * sizeof(int));
 
 	// generate random integers
 	gen_rand(array, len);
@@ -40,51 +39,50 @@ void gen_array(int len, int type)
 	// datasets are copied and then sorted with the runtime being measured
 	// random order
 	printf("random: ");
-	copyarray(array, 0, len, workarray);
-	measure_runtime(array, len, type);
-//	print_array(workarray, len);
+	measure_runtime(array, len, type, 0);
 
 	// partially sorted
 	printf("partial: ");
-	copyarray(array, 0, len, workarray);
-	partial_sort(workarray, len);
-	measure_runtime(workarray, len, type);
+
+	measure_runtime(array, len, type, 1);
 
 	// reverse sorted data
 	printf("reversed: ");
-	copyarray(array, 0, len, workarray);
-	reverse_sort(workarray, len);
-	measure_runtime(workarray, len, type);
+
+	measure_runtime(array, len, type, 2);
 
 	// sorted data
 	printf("sorted: ");
-	measure_runtime(workarray, len, type);
-	//print_array(workarray, len);
-	free(workarray);
-
+	measure_runtime(array, len, type, 3);
+//	free(workarray);
 	return;
 }
 
-void measure_runtime(int *array, int len, int type)
+void measure_runtime(int *array, int len, int type, int arr_type)
 {
 	clock_t start, end;
-	start = clock();
+	int *workarray;
+	workarray = (int *) malloc(len * sizeof(int));
+	// copies array to workarray to make it easier
+	copyarray(array, 0, len, workarray);
+	array_type(workarray, len, arr_type);
+	print_array(workarray, len);
 
+	start = clock();
 	switch(type)
 	{
 	case 1:
 		printf("bubblesort\n");
-		bubblesort(array, len);
+		bubblesort(workarray, len);
 		break;
 	case 2:
 		printf("quicksort\n");
-		quicksort(array, 0, len - 1);
+		quicksort(workarray, 0, len - 1);
 		break;
 	case 3:
 		printf("mergesort\n");
-		mergesort(array, len);
-		print_array(array, len);
-		break;
+		mergesort(workarray, len);
+			break;
 	}
 	end = clock();
 	
@@ -97,8 +95,8 @@ void measure_runtime(int *array, int len, int type)
 
 void print_array(int *array, int len)
 {
-	for(int *p = array; p < array+len;++p)
-		printf("%d\n", *p);
+	for(int i=0;i<len;++i)
+		printf("%d\n", array[i]);
 }
 
 
