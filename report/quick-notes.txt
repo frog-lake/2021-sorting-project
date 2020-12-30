@@ -19,4 +19,6 @@ quicksort implementation
 --> program is no longer able to handle sorting 1000000 ints, might be to do with all the memory used
 --> after further testing, it appears that the current machine may just not have enough memory to handle generating 1000000 ints, which will be further tested on other machines
 
-
+30/12/20
+--> implemented malloc() to array and workarray and solved the issue of the program being unable to handle over 1 million integers
+--> spent so long in a detached head state and went a little bit mad because i didn't realise i was there for so long
