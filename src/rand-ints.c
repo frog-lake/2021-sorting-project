@@ -14,9 +14,8 @@ void gen_rand(int *array, int len)
 {
 	srand(time(0));
 
-	for(int i = 0; i<len; ++i)
-		array[i] = rand();
-
+	for(int *p = array; p<array+len; ++p)
+		*p = rand();
 }
 
 void reverse_sort(int *array, int len)
