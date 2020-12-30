@@ -43,12 +43,10 @@ void gen_array(int len, int type)
 
 	// partially sorted
 	printf("partial: ");
-
 	measure_runtime(array, len, type, 1);
 
 	// reverse sorted data
 	printf("reversed: ");
-
 	measure_runtime(array, len, type, 2);
 
 	// sorted data
@@ -82,7 +80,7 @@ void measure_runtime(int *array, int len, int type, int arr_type)
 	case 3:
 		printf("mergesort\n");
 		mergesort(workarray, len);
-			break;
+		break;
 	}
 	end = clock();
 	
@@ -91,12 +89,9 @@ void measure_runtime(int *array, int len, int type, int arr_type)
 
 }
 
-
-
 void print_array(int *array, int len)
 {
 	for(int i=0;i<len;++i)
 		printf("%d\n", array[i]);
 }
-
 
