@@ -23,3 +23,6 @@ quicksort implementation
 --> implemented malloc() to array and workarray and solved the issue of the program being unable to handle over 1 million integers
 --> spent so long in a detached head state and went a little bit mad because i didn't realise i was there for so long
 --> attempted to adjust some of the for loops, and thought the adjustments screwed up the sorting, but turns out i was printing out the wrong array, so i'll attempt to do what i did before again
+
+02/01/21
+--> turns out, i accidentally made it so that the program generates 4 arrays each time datasets() was called which prevented me from generating more than 2 million ints, but now that the random number array is generated only once, the program can now generate up to at least 1 billion ints, which is pretty cool

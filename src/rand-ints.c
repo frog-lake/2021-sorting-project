@@ -4,30 +4,19 @@
 
 #include "rand-ints.h"
 
+// generates an array of random integers
 void gen_rand(int *array, int len);
-void partial_sort(int *array, int len);
-int compare_ints(const void *a, const void *b);
-void reverse_sort(int *array, int len);
-int rev_compare_ints(const void *a, const void *b);
+// sorts a set for different types of datasets 
 void array_type(int *array, int len, int arr_type);
+int compare_ints(const void *a, const void *b);
+int rev_compare_ints(const void *a, const void *b);
 
 void gen_rand(int *array, int len)
 {
-	srand(time(0));
+	srand(time(NULL));
 
 	for(int *p = array; p<array+len; ++p)
 		*p = rand();
-}
-
-void reverse_sort(int *array, int len)
-{
-	qsort(array, len, sizeof(int), rev_compare_ints);
-}
-
-void partial_sort(int *array, int len)
-{
-	int part = len/2;
-	qsort(array, part, sizeof(int), compare_ints);
 }
 
 int compare_ints(const void *a, const void *b)
@@ -52,15 +41,15 @@ void array_type(int *array, int len, int arr_type)
 	switch(arr_type)
 	{
 	case 1:
-		//partial sort
-		partial_sort(array, len);
+		//partially sorted array
+		qsort(array, len/2, sizeof(int), compare_ints);
 		break;
 	case 2:
-		// reverse sort
-		reverse_sort(array, len);
+		// reverse sorted array
+		qsort(array, len, sizeof(int), rev_compare_ints);
 		break;
 	case 3:
-		// sorted
+		// sorted array
 		qsort(array, len, sizeof(int), compare_ints);
 		break;
 	}

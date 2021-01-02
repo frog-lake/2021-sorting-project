@@ -3,41 +3,49 @@
 #include <time.h>
 
 #include "rand-ints.h"
-// gen-rand, partial_sort, reverse_sort
+// gen_rand, array_type
 #include "sorting-algorithms.h"
 // bubblesort, quicksort, mergesort, copyarray
 
+// generates the random array and calls measure_runtime
+void datasets(int *array, int len, int type);
+// prints array (used for testing)
 void print_array(int *array, int len);
+// times the algorithms and calls array_type for different types of datasets
 void measure_runtime(int *array, int len, int type, int arr_type);
-void gen_array(int len, int type);
 
 int main(int argc, char *argv[])
 {
 	// var declarations
-	int len = 0, type;
+	int len = 0, *array;
 
 	// if argc has 3 args, continue
-	if(argc == 3)
+	if(argc == 2)
 	{
 		len = atoi(argv[1]);
-		type = atoi(argv[2]);
-		gen_array(len, type);
+		array = (int *) malloc(len * sizeof(int));
+		// generate an array of random integers
+		gen_rand(array, len);	
+
+		// bubblesort
+		datasets(array, len, 1);
+		printf("-----\n\n");
+
+		// quicksort
+		datasets(array, len, 2);
+		printf("-----\n\n");
+
+		// mergesort
+		datasets(array, len, 3);
+		printf("-----\n\n");
 	}
-	else{return 0;}
+
+	return 0;
 }
 
-void gen_array(int len, int type)
+void datasets(int *array, int len, int type)
 {
-	int *array;
-	array = (int *) malloc(len * sizeof(int));
-
-	// generate random integers
-	gen_rand(array, len);
-
-	print_array(array, len);
-	printf("--\n");
-	// datasets are copied and then sorted with the runtime being measured
-	// random order
+	// random (unchanged)
 	printf("random: ");
 	measure_runtime(array, len, type, 0);
 
@@ -52,7 +60,7 @@ void gen_array(int len, int type)
 	// sorted data
 	printf("sorted: ");
 	measure_runtime(array, len, type, 3);
-//	free(workarray);
+
 	return;
 }
 
@@ -61,11 +69,12 @@ void measure_runtime(int *array, int len, int type, int arr_type)
 	clock_t start, end;
 	int *workarray;
 	workarray = (int *) malloc(len * sizeof(int));
-	// copies array to workarray to make it easier
-	copyarray(array, 0, len, workarray);
-	array_type(workarray, len, arr_type);
-	print_array(workarray, len);
 
+	// copies array to workarray so that a new array doesn't
+	// need to be set up each time
+	copyarray(array, 0, len, workarray);
+	// calls for either a partially sorted, reverse sorted, or sorted array
+	array_type(workarray, len, arr_type);
 	start = clock();
 	switch(type)
 	{
