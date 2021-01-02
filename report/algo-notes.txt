@@ -1,0 +1,10 @@
+bubblesort
+worst case(s) - random, partial, reversed
+best case(s) - sorted
+
+quicksort
+worst case(s) - sorted, reversed
+best case(s) - random, partial
+
+mergesort
+each case takes almost the same amount of time, although as the amount of integers increase, in can be observed that the random case gradually becomes bigger than the other cases, while the other cases stay relatively the same

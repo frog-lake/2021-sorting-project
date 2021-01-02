@@ -6,7 +6,7 @@ echo "-- 10000 ints --"
 ../bin/./sorting 10000
 echo "-- 100000 ints --"
 ../bin/./sorting 100000
-#echo "-- 1000000 ints --"
-#../bin/./sorting 1000000
+echo "-- 1000000 ints --"
+../bin/./sorting 1000000
 
-
+# this is going to take a while

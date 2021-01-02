@@ -26,3 +26,5 @@ quicksort implementation
 
 02/01/21
 --> turns out, i accidentally made it so that the program generates 4 arrays each time datasets() was called which prevented me from generating more than 2 million ints, but now that the random number array is generated only once, the program can now generate up to at least 1 billion ints, which is pretty cool
+--> attempted to adjust one of the for loops in sorting-algorithms.c but once again it was a failure
+--> somehow, quicksort ends up segfaulting when it tries to sort 1 million integers, whereas bubblesort is able to sort the same amount just fine, albeit very slowly
