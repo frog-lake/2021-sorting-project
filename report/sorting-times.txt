@@ -59,6 +59,13 @@ partial  - 00.000419
 reversed - 00.000415
 sorted   - 00.000414
 
+  mergesort 2
+random   - 00.004837
+partial  - 00.004599
+reversed - 00.004676
+sorted   - 00.004605
+
+
 -- 100000 ints --
   bubblesort
 random   - 27.798030
@@ -97,3 +104,9 @@ random   - 0.055365
 partial  - 0.054188
 reversed - 0.053980
 sorted   - 0.053913
+
+mergesort 2
+random   - 0.054495
+partial  - 0.053268
+reversed - 0.052771
+sorted   - 0.052631
