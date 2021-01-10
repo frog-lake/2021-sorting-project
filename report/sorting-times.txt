@@ -1,0 +1,80 @@
+(02/01/2021)
+
+-- 100 ints --
+  bubblesort
+random   - 00.000129
+partial  - 00.000087
+reversed - 00.000110
+sorted   - 00.000051
+
+  quicksort
+random   - 00.000032
+partial  - 00.000034
+reversed - 00.000084
+sorted   - 00.000114
+
+  mergesort
+random   - 00.000022
+partial  - 00.000020
+reversed - 00.000020
+sorted   - 00.000023
+
+
+-- 1000 ints --
+  bubblesort
+random   - 00.008072
+partial  - 00.001759
+reversed - 00.002237
+sorted   - 00.000938
+
+  quicksort
+random   - 00.000121
+partial  - 00.000078
+reversed - 00.001610
+sorted   - 00.002245
+
+  mergesort
+random   - 00.000034
+partial  - 00.000034
+reversed - 00.000034
+sorted   - 00.000034
+
+
+-- 10000 ints --
+  bubblesort
+random   - 00.250311
+partial  - 00.205025
+reversed - 00.221933
+sorted   - 00.092880
+
+  quicksort
+random   - 00.001064
+partial  - 00.001007
+reversed - 00.160814
+sorted   - 00.222328
+
+  mergesort
+random   - 00.000394
+partial  - 00.000419
+reversed - 00.000415
+sorted   - 00.000414
+
+
+-- 1000000 ints --
+bubblesort
+random   - 2781.640660
+partial  - 2317.350042
+reversed - 2193.542408
+sorted   - 0914.733411
+
+quicksort
+random   - 0.158952
+partial  - 0.152931
+reversed - DNF (seg fault)
+sorted   - DNF (seg fault)
+
+mergesort
+random   - 0.055365
+partial  - 0.054188
+reversed - 0.053980
+sorted   - 0.053913
