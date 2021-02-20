@@ -1,7 +1,7 @@
 # Systems Programming
 
 ## Introduction
-This repo contains work done on my Systems Programming project (module code omitted to make this harder to search for). The project was originally done on GitLab, with several changes made to the directory. The purpose of this project is to measure the time it takes for several sorting algorithms to sort certain amounts of numbers
+This repo contains work done on my Systems Programming project (module code omitted to make this harder to search for). The project was originally done on GitLab, with several changes made to the directory. The purpose of this project is to measure the time it takes for several sorting algorithms to sort certain amounts of numbers. This project was made on Linux.
 
 ## Contents
 <h3>--> src/</h3>
