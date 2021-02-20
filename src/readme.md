@@ -10,4 +10,5 @@ This directory contains the source code for the project.
   <li>rand-ints.c --> random number generator that generates an array of numbers of a given length + a function to sort the array (sorted, reverse, partial) before the array is passed to the sorting algorithms</li>
   <li>sorting-algorithms.c --> contains 3 sorting algos - bubblesort, quicksort and mergesort</li>
   <li>main.c --> runs and measures the time it takes for each algo to run</li>
+  <li>test.sh --> goes through each test case (100 ints, 1000 ints, etc...)</li>
 </ul>
