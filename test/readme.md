@@ -1,5 +1,5 @@
-# CA284 Systems Programming
+# Systems Programming
 
 ## Introduction
 
-This directory contains test data you wish to keep track of.  You can put data sets, results and anything else to do with the testing of your algorithms.
+let me get back to you on this <3
