@@ -1,13 +1,9 @@
-# CA284 Systems Programming
+# Systems Programming
 
 ## Introduction
+This repo contains work done on my Systems Programming project (module code omitted to make this harder to search for). The project was originally done on GitLab, with several changes made to the directory. The purpose of this project is to measure the time it takes for several sorting algorithms to sort certain amounts of numbers
 
-This repo contains the starter layout for the CA284 Systems Programming project worth 50%.  Pay attention to the instructions here.
+## Contents
+<h3>src/</h3>
+Contains the source code for the project, including the main program, the sorting algorithms, and the random number generator to feed into the algorithms.
 
-1. Fork this repository.
-2. download (clone) the forked repository to your computer
-3. start working on the project.
-
-
-
-You might want to set notifications and/or other "watch" features on the School of Computing Gitlab to keep abrest of any changes/additions I make to this original repository.  You will then be able to keep your forked version in sync with mine.  Note: _do not clone my repository, fork it_.
