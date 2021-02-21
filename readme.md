@@ -13,5 +13,3 @@ This repo contains work done on my Systems Programming project (module code omit
 <h3>--> bin/</h3>
     Directory to store the executable for main.c when Makefile is run.
  
-<h3>--> test/</h3>
-    Holy shit there's nothing
